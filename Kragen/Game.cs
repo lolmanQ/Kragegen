@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Kragen.Engine;
 
 namespace Kragen
 {
-    public class Game
-    {
-        static bool gameRuning = true, inputRuning = true;
+	public class Game
+	{
+		static bool gameRuning = true, inputRuning = true;
 		public static List<Verb> verbs = new List<Verb>(){
 			new Move(), new Help(), new Attack(), new Quit(), new Info()
 		};
@@ -93,5 +94,5 @@ namespace Kragen
 			Console.ForegroundColor = ConsoleColor.DarkMagenta;
 			Console.WriteLine("-----------------------");
 		}
-    }
+	}
 }

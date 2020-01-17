@@ -6,7 +6,7 @@ namespace Kragen
     {
         static void Main()
         {
-            
+            Console.WriteLine("hello");
         }
     }
 }
