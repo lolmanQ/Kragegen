@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Kragen.Engine
+namespace Default
 {
     public class Renderer
     {
-        public int gridWidth, gridHeight;
+		public int gridWidth, gridHeight;
 		Gameobjekt[,] displayAr;
 		List<Pos2D> changedPoints;
 		public Renderer(int width, int height)
