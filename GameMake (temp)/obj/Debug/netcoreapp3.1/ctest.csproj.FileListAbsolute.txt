@@ -20,3 +20,14 @@
 /home/elbo02001/C# menu test/GameMake/obj/Debug/netcoreapp3.1/ctest.AssemblyInfo.cs
 /home/elbo02001/C# menu test/GameMake/obj/Debug/netcoreapp3.1/ctest.dll
 /home/elbo02001/C# menu test/GameMake/obj/Debug/netcoreapp3.1/ctest.pdb
+/home/elbo02001/github/Kragegen/GameMake (temp)/bin/Debug/netcoreapp3.1/ctest
+/home/elbo02001/github/Kragegen/GameMake (temp)/bin/Debug/netcoreapp3.1/ctest.deps.json
+/home/elbo02001/github/Kragegen/GameMake (temp)/bin/Debug/netcoreapp3.1/ctest.runtimeconfig.json
+/home/elbo02001/github/Kragegen/GameMake (temp)/bin/Debug/netcoreapp3.1/ctest.runtimeconfig.dev.json
+/home/elbo02001/github/Kragegen/GameMake (temp)/bin/Debug/netcoreapp3.1/ctest.dll
+/home/elbo02001/github/Kragegen/GameMake (temp)/bin/Debug/netcoreapp3.1/ctest.pdb
+/home/elbo02001/github/Kragegen/GameMake (temp)/obj/Debug/netcoreapp3.1/ctest.csprojAssemblyReference.cache
+/home/elbo02001/github/Kragegen/GameMake (temp)/obj/Debug/netcoreapp3.1/ctest.AssemblyInfoInputs.cache
+/home/elbo02001/github/Kragegen/GameMake (temp)/obj/Debug/netcoreapp3.1/ctest.AssemblyInfo.cs
+/home/elbo02001/github/Kragegen/GameMake (temp)/obj/Debug/netcoreapp3.1/ctest.dll
+/home/elbo02001/github/Kragegen/GameMake (temp)/obj/Debug/netcoreapp3.1/ctest.pdb

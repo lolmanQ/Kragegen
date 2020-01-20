@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/elbo02001/C# menu test/GameMake/ctest.csproj",
+      "projectUniqueName": "/home/elbo02001/github/Kragegen/GameMake (temp)/ctest.csproj",
       "projectName": "ctest",
-      "projectPath": "/home/elbo02001/C# menu test/GameMake/ctest.csproj",
+      "projectPath": "/home/elbo02001/github/Kragegen/GameMake (temp)/ctest.csproj",
       "packagesPath": "/home/elbo02001/.nuget/packages/",
-      "outputPath": "/home/elbo02001/C# menu test/GameMake/obj/",
+      "outputPath": "/home/elbo02001/github/Kragegen/GameMake (temp)/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/elbo02001/.nuget/NuGet/NuGet.Config"

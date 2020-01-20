@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using ctest.Verbs;
+using ctest.Inventory;
 
 namespace Default
 {
@@ -7,33 +9,41 @@ namespace Default
 	{
 		static bool gameRuning = true, inputRuning = true;
 		public static List<Verb> verbs = new List<Verb>(){
-			new Move(), new Help(), new Attack(), new Quit(), new Info()
+			new Move(), new Help(), new Attack(), new Quit(), new Info(), new Inv()
 		};
 		public static Verb currentVerb;
-		public static Gameobjekt player;
+		public static Player player;
 		public static Renderer renderer;
 
 		public static List<Gameobjekt> gameObjList;
 
-		public static void Start()
+		public void Start()
 		{
 			renderer = new Renderer(5,5);
 			gameObjList = new List<Gameobjekt>();
 			player = new Player();
 			player.position = new Pos2D(2, 2);
 			gameObjList.Add(player);
-			gameObjList.Add(new Wall(new Pos2D(1,1)));
+			gameObjList.Add(new Wall(new Pos2D(0,0)));
+			gameObjList.Add(new Wall(new Pos2D(0,1)));
+			gameObjList.Add(new Wall(new Pos2D(0,2)));
+			gameObjList.Add(new Wall(new Pos2D(0,3)));
+			gameObjList.Add(new Wall(new Pos2D(0,4)));
+
+			player.inventory.AddItem(new Sword(10, 4, "Start sword"));
+			player.inventory.AddItem(new Armor());
+			player.inventory.AddItem(new Sword(100, 1, "God sword"));
 			
 			Console.Clear();
 			Loop();
 		}
 
-		static void Quiting()
+		void Quiting()
 		{
 			
 		}
 
-		static void Loop()
+		void Loop()
 		{
 			do
 			{
@@ -47,7 +57,7 @@ namespace Default
 			Quiting();
 		}
 
-		static void CheckInput()
+		void CheckInput()
 		{
 			if(Input.verb.ToLower() == "quit") //Check if quit
 			{
@@ -65,7 +75,7 @@ namespace Default
 			}
 		}
 
-		static void Update()
+		void Update()
 		{
 			currentVerb.Use();
 			foreach (Gameobjekt item in gameObjList)
@@ -74,13 +84,15 @@ namespace Default
 			}
 		}
 
-		static void Render()
+		void Render()
 		{
 			renderer.Start();
 			Console.Clear();
 			Console.ResetColor();
-			renderer.AddObj(player);
-			renderer.AddObj(gameObjList[1]);
+			foreach (Gameobjekt item in gameObjList)
+			{
+				renderer.AddObj(item);
+			}
 			if(!currentVerb.isTextBased) // if not text based renders play field
 			{
 				

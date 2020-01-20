@@ -23,7 +23,6 @@ namespace Default
 		public override void Use()
 		{
 			base.Use();
-			Input.NewMod(allowedMods);
 			makeMove();
 			MakeOutText();
 		}
