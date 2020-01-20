@@ -20,3 +20,14 @@
 /home/elbo02001/C# menu test/GameMake/obj/Debug/netcoreapp3.1/ctest.AssemblyInfo.cs
 /home/elbo02001/C# menu test/GameMake/obj/Debug/netcoreapp3.1/ctest.dll
 /home/elbo02001/C# menu test/GameMake/obj/Debug/netcoreapp3.1/ctest.pdb
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\bin\Debug\netcoreapp3.1\ctest.exe
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\bin\Debug\netcoreapp3.1\ctest.deps.json
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\bin\Debug\netcoreapp3.1\ctest.runtimeconfig.json
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\bin\Debug\netcoreapp3.1\ctest.runtimeconfig.dev.json
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\bin\Debug\netcoreapp3.1\ctest.dll
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\bin\Debug\netcoreapp3.1\ctest.pdb
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\obj\Debug\netcoreapp3.1\ctest.csprojAssemblyReference.cache
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\obj\Debug\netcoreapp3.1\ctest.AssemblyInfoInputs.cache
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\obj\Debug\netcoreapp3.1\ctest.AssemblyInfo.cs
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\obj\Debug\netcoreapp3.1\ctest.dll
+C:\Users\elias\Documents\GitHub\Kragegen\GameMake (temp)\obj\Debug\netcoreapp3.1\ctest.pdb

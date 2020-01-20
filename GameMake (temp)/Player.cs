@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace Default
 {
-    public class Player : Gameobjekt
-    {
+	public class Player : Gameobjekt
+	{
 		private int health;
 		public int Health {
 			get{ return health; }
 			private set{ health = value; }
 		}
-        public Player()
+		public Player()
 		{
 			symbole = "웃";
 			isDrawn = true;
@@ -20,5 +20,5 @@ namespace Default
 			zIndex = 10;
 		}
 		
-    }
+	}
 }

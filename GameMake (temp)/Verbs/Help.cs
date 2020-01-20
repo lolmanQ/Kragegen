@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Default
 {
-    public class Help : Verb
-    {
-        public Help()
+	public class Help : Verb
+	{
+		public Help()
 		{
 			name = "Help";
 			isTextBased = true;
@@ -28,5 +28,5 @@ namespace Default
 				verbText += item.name + ", ";
 			}
 		}
-    }
+	}
 }

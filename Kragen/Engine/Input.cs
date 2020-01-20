@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Kragen.Verbs;
 
 namespace Kragen.Engine
 {
-    public class Input
-    {
-        public static string verb;
+	public class Input
+	{
+		public static string verb;
 		public static string mod;
 		public static void NewCycle()
 		{
@@ -47,5 +48,5 @@ namespace Kragen.Engine
 			Console.WriteLine("input not alowed");
 			NewMod(listOfAllowed);
 		}
-    }
+	}
 }

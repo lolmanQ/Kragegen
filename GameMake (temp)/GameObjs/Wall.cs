@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Default
 {
-    public class Wall : Gameobjekt
-    {
-        public Wall()
+	public class Wall : Gameobjekt
+	{
+		public Wall()
 		{
 			symbole = "#";
 			isDrawn = true;
@@ -19,5 +19,5 @@ namespace Default
 			isDrawn = true;
 			position = pos;
 		}
-    }
+	}
 }

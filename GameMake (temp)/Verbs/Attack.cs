@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Default
 {
-    public class Attack : Verb
-    {
-        public Attack()
+	public class Attack : Verb
+	{
+		public Attack()
 		{
 			name = "Attack";
 			isTextBased = false;
@@ -24,5 +24,5 @@ namespace Default
 		{
 			verbText = "You attackt!!";
 		}
-    }
+	}
 }
