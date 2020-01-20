@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Default
 {
-    public class Info : Verb
-    {
-        public Info()
+	public class Info : Verb
+	{
+		public Info()
 		{
 			name = "Info";
 			isTextBased = true;
@@ -24,5 +24,5 @@ namespace Default
 		{
 			verbText = "Gives you info";
 		}
-    }
+	}
 }

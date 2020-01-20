@@ -2,11 +2,11 @@
 
 namespace Kragen
 {
-    class Program
-    {
-        static void Main()
-        {
-            Console.WriteLine("hello");
-        }
-    }
+	class Program
+	{
+		static void Main()
+		{
+			Game.Start();
+		}
+	}
 }

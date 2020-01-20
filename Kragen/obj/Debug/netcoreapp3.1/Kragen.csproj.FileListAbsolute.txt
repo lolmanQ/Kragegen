@@ -14,3 +14,9 @@ C:\Users\elias\Documents\GitHub\Kragegen\Kragen\obj\Debug\netcoreapp3.1\Kragen.A
 C:\Users\elias\Documents\GitHub\Kragegen\Kragen\obj\Debug\netcoreapp3.1\Kragen.AssemblyInfo.cs
 C:\Users\elias\Documents\GitHub\Kragegen\Kragen\obj\Debug\netcoreapp3.1\Kragen.dll
 C:\Users\elias\Documents\GitHub\Kragegen\Kragen\obj\Debug\netcoreapp3.1\Kragen.pdb
+C:\Users\elias\Documents\GitHub\Kragegen\Kragen\bin\Debug\netcoreapp3.1\Kragen.exe
+C:\Users\elias\Documents\GitHub\Kragegen\Kragen\bin\Debug\netcoreapp3.1\Kragen.deps.json
+C:\Users\elias\Documents\GitHub\Kragegen\Kragen\bin\Debug\netcoreapp3.1\Kragen.runtimeconfig.json
+C:\Users\elias\Documents\GitHub\Kragegen\Kragen\bin\Debug\netcoreapp3.1\Kragen.runtimeconfig.dev.json
+C:\Users\elias\Documents\GitHub\Kragegen\Kragen\bin\Debug\netcoreapp3.1\Kragen.dll
+C:\Users\elias\Documents\GitHub\Kragegen\Kragen\bin\Debug\netcoreapp3.1\Kragen.pdb

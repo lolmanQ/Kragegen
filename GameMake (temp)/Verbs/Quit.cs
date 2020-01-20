@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Default
 {
-    public class Quit : Verb
-    {
-        public Quit()
+	public class Quit : Verb
+	{
+		public Quit()
 		{
 			name = "Quit";
 			isTextBased = true;
@@ -24,5 +24,5 @@ namespace Default
 		{
 			verbText = "You attackt!!";
 		}
-    }
+	}
 }

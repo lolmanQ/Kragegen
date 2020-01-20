@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Kragen.Engine;
+using Kragen.Verbs;
+using Kragen.GameObj;
 
 namespace Kragen
 {
@@ -26,8 +28,10 @@ namespace Kragen
 			player.position = new Pos2D(2, 2);
 			gameObjList.Add(player);
 			gameObjList.Add(new Wall(new Pos2D(1,1)));
-			
+			currentVerb = new Verb();
+
 			Console.Clear();
+			Render();
 			Loop();
 		}
 

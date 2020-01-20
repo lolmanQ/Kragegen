@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Kragen.Engine
 {
-    public class Renderer
-    {
-        public int gridWidth, gridHeight;
+	public class Renderer
+	{
+		public int gridWidth, gridHeight;
 		Gameobjekt[,] displayAr;
 		List<Pos2D> changedPoints;
 		public Renderer(int width, int height)
@@ -24,7 +24,7 @@ namespace Kragen.Engine
 			displayAr = new Gameobjekt[gridWidth,gridHeight];
 		}
 
-        public void AddObj(Gameobjekt gameobjekt)
+		public void AddObj(Gameobjekt gameobjekt)
 		{
 			//Dev.Dis(changedPoints);
 			//Dev.Dis(changedPoints.Count);
@@ -45,11 +45,15 @@ namespace Kragen.Engine
 			{
 				foreach (Pos2D item in changedPoints)
 				{
-					if(gameobjekt.position == item)
+					if(gameobjekt.position.x == item.x && gameobjekt.position.y == item.y)
 					{
 						if(gameobjekt.zIndex > displayAr[item.x, item.y].zIndex)
 						{
 							displayAr[item.x, item.y] = gameobjekt;
+							return;
+						}
+						else
+						{
 							return;
 						}
 					}
@@ -100,5 +104,5 @@ namespace Kragen.Engine
 			}
 			return false;
 		}
-    }
+	}
 }

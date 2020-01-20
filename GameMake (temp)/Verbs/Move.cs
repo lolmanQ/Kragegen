@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace Default
 {
-    public class Move : Verb
-    {
+	public class Move : Verb
+	{
 		Pos2D newPos;
 		Pos2D oldPos;
-        public Move()
+		public Move()
 		{
 			name = "Move";
 			isTextBased = false;
@@ -61,5 +61,5 @@ namespace Default
 		{
 			verbText = "You moved to: " + newPos.x + ", " + newPos.y; 
 		}
-    }
+	}
 }
