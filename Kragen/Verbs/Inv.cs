@@ -1,13 +1,12 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Default;
-using ctest.Inventory;
+using System.Text;
+using Kragen.Engine;
+using Kragen.InventorySystem;
 
-namespace ctest.Verbs
+namespace Kragen.Verbs
 {
-	public class Inv : Verb
+	class Inv : Verb
 	{
 		public Inv()
 		{
@@ -32,20 +31,20 @@ namespace ctest.Verbs
 			{
 				case "weapons":
 				case "w":
-					foreach (Item item in Game.player.inventory.GetAllWeapons())
+					foreach (Item item in Game.Player.inventory.GetAllWeapons())
 					{
-						verbText += item.Name+", Level: "+item.Level+"\n";
+						verbText += item.Name + ", Level: " + item.Level + "\n";
 					}
 					break;
 				case "all":
 				case "a":
-					foreach (Item item in Game.player.inventory.GetAllItems())
+					foreach (Item item in Game.Player.inventory.GetAllItems())
 					{
 						verbText += item.Name + "\n";
 					}
 					break;
 			}
-			
+
 		}
 	}
 }

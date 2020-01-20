@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kragen.Inventory
+namespace Kragen.InventorySystem
 {
 	class Item
 	{
@@ -10,7 +10,18 @@ namespace Kragen.Inventory
 		public int ID
 		{
 			get { return id; }
-			protected set { id = value; }
+		}
+
+		protected string name;
+		public string Name
+		{
+			get { return name; }
+		}
+
+		protected int lvl;
+		public int Level
+		{
+			get { return lvl; }
 		}
 	}
 }

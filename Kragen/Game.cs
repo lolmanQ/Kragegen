@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using Kragen.Engine;
 using Kragen.Verbs;
 using Kragen.GameObj;
+using Kragen.InventorySystem;
+using Kragen.InventorySystem.Armors;
+using Kragen.InventorySystem.Weapons;
 
 namespace Kragen
 {
@@ -12,59 +15,68 @@ namespace Kragen
 	{
 		static bool gameRuning = true, inputRuning = true;
 		public static List<Verb> verbs = new List<Verb>(){
-			new Move(), new Help(), new Attack(), new Quit(), new Info()
+			new Move(), new Help(), new Attack(), new Quit(), new Info(), new Inv()
 		};
 		public static Verb currentVerb;
-		public static Gameobjekt player;
+		private static Player player;
 		public static Renderer renderer;
 
 		public static List<Gameobjekt> gameObjList;
 
-		public static void Start()
+		internal static Player Player { get => player; set => player = value; }
+
+		public void Start()
 		{
-			renderer = new Renderer(5,5);
+			renderer = new Renderer(5, 5);
 			gameObjList = new List<Gameobjekt>();
-			player = new Player();
-			player.position = new Pos2D(2, 2);
-			gameObjList.Add(player);
-			gameObjList.Add(new Wall(new Pos2D(1,1)));
-			currentVerb = new Verb();
+			Player = new Player();
+			Player.position = new Pos2D(2, 2);
+			gameObjList.Add(Player);
+			gameObjList.Add(new Wall(new Pos2D(0, 0)));
+			gameObjList.Add(new Wall(new Pos2D(0, 1)));
+			gameObjList.Add(new Wall(new Pos2D(0, 2)));
+			gameObjList.Add(new Wall(new Pos2D(0, 3)));
+			gameObjList.Add(new Wall(new Pos2D(0, 4)));
+
+			Player.inventory.AddItem(new Sword(10, 4, "Start sword"));
+			Player.inventory.AddItem(new Helmet(10, 3, "A hat"));
+			Player.inventory.AddItem(new Sword(100, 1, "God sword"));
 
 			Console.Clear();
-			Render();
 			Loop();
 		}
 
-		static void Quiting()
+		void Quiting()
 		{
-			
+
 		}
 
-		static void Loop()
+		void Loop()
 		{
 			do
 			{
 				Input.NewCycle();
 				CheckInput();
-				if(gameRuning){
+				if (gameRuning)
+				{
 					Update();
 					Render();
 				}
-			} while(inputRuning);
+			} while (inputRuning);
 			Quiting();
 		}
 
-		static void CheckInput()
+		void CheckInput()
 		{
-			if(Input.verb.ToLower() == "quit") //Check if quit
+			if (Input.verb.ToLower() == "quit") //Check if quit
 			{
 				gameRuning = false;
 				inputRuning = false;
 			}
-			
+
 			foreach (Verb item in verbs)
 			{
-				if(Input.verb == item.name.ToLower())
+				if (Input.verb == item.name.ToLower())
 				{
 					currentVerb = item;
 					break;
@@ -72,7 +84,7 @@ namespace Kragen
 			}
 		}
 
-		static void Update()
+		void Update()
 		{
 			currentVerb.Use();
 			foreach (Gameobjekt item in gameObjList)
@@ -81,16 +93,18 @@ namespace Kragen
 			}
 		}
 
-		static void Render()
+		void Render()
 		{
 			renderer.Start();
 			Console.Clear();
 			Console.ResetColor();
-			renderer.AddObj(player);
-			renderer.AddObj(gameObjList[1]);
-			if(!currentVerb.isTextBased) // if not text based renders play field
+			foreach (Gameobjekt item in gameObjList)
 			{
-				
+				renderer.AddObj(item);
+			}
+			if (!currentVerb.isTextBased) // if not text based renders play field
+			{
+
 			}
 			renderer.Draw();
 			Console.ForegroundColor = ConsoleColor.Blue;

@@ -23,16 +23,15 @@ namespace Kragen.Verbs
 		public override void Use()
 		{
 			base.Use();
-			Input.NewMod(allowedMods);
-			makeMove();
+			MakeMove();
 			MakeOutText();
 		}
 
-		void makeMove()
+		void MakeMove()
 		{
 			oldPos = new Pos2D();
 			newPos = new Pos2D();
-			oldPos = Game.player.position;
+			oldPos = Game.Player.position;
 			switch (Input.mod)
 			{
 				case "u":
@@ -55,7 +54,7 @@ namespace Kragen.Verbs
 					newPos = oldPos;
 					break;
 			}
-			Game.player.position = newPos;
+			Game.Player.position = newPos;
 		}
 
 		new void MakeOutText()

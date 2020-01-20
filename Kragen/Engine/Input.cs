@@ -20,15 +20,35 @@ namespace Kragen.Engine
 		public static void NewVerb()
 		{
 			Console.ForegroundColor = ConsoleColor.White;
-			verb = Console.ReadLine();
-			verb = verb.ToLower();
-			foreach (Verb item in Game.verbs)
+			string inputString = Console.ReadLine();
+			inputString = inputString.ToLower();
+			string[] inputAr = inputString.Split(' ');
+			if (inputAr.Length != 0)
 			{
-				if(verb == item.name.ToLower())
+				verb = inputAr[0];
+				foreach (Verb item in Game.verbs)
 				{
-					return;
+					if (verb == item.name.ToLower())
+					{
+						if (item.hasMods && inputAr.Length > 1)
+						{
+							foreach (string allowed in item.allowedMods)
+							{
+								if (allowed.ToLower() == inputAr[1])
+								{
+									mod = inputAr[1];
+									return;
+								}
+							}
+						}
+						else if (!item.hasMods)
+						{
+							return;
+						}
+					}
 				}
 			}
+
 			Console.ForegroundColor = ConsoleColor.Red;
 			Console.WriteLine("bad input");
 			NewVerb();

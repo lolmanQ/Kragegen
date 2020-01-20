@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kragen.Inventory
+namespace Kragen.InventorySystem
 {
 	class Weapon : Item
 	{
-
-		public Weapon()
+		protected int dmg;
+		public int Dmg
 		{
-			ID = 2;
+			get { return dmg; }
+			protected set { dmg = value; }
+		}
+		public virtual void Use()
+		{
+
 		}
 	}
 }

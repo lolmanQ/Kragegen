@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace ctest.Inventory
 {
-    public class Weapon : Item
-    {
-        public virtual void Use()
+	public class Weapon : Item
+	{
+		public virtual void Use()
 		{
-			
+
 		}
-    }
+	}
 }

@@ -6,9 +6,9 @@ using ctest.Inventory;
 
 namespace Default
 {
-    public class Inventory
-    {
-        public List<Item> storage = new List<Item>();
+	public class Inventory
+	{
+		public List<Item> storage = new List<Item>();
 		
 		public void AddItem(Item item)
 		{
@@ -50,5 +50,5 @@ namespace Default
 		{
 			return storage;
 		}
-    }
+	}
 }

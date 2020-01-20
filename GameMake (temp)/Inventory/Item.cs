@@ -6,15 +6,15 @@ using Default;
 
 namespace ctest.Inventory
 {
-    public class Item
-    {
+	public class Item
+	{
 		protected int id;
-        public int ID{
+		public int ID{
 			get{ return id; }
 		}
 
 		protected string name;
-        public string Name{
+		public string Name{
 			get{ return name; }
 		}
 
@@ -24,5 +24,5 @@ namespace ctest.Inventory
 		}
 
 
-    }
+	}
 }
