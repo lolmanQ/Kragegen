@@ -10,7 +10,7 @@ namespace Kragen.Verbs
 		{
 			name = "Info";
 			isTextBased = true;
-			hasMods = true;
+			hasMods = false;
 		}
 
 		public override void Use()
