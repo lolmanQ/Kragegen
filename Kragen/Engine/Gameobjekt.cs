@@ -9,7 +9,7 @@ namespace Kragen.Engine
     {
     	public Pos2D position;
 		public string symbole;
-		public bool isDrawn;
+		public bool isDrawn, hasCollision;
 		public int zIndex;
 
 		public Gameobjekt()
@@ -17,6 +17,7 @@ namespace Kragen.Engine
 			zIndex = 0;
 			symbole = "  ";
 			isDrawn = false;
+			hasCollision = false;
 		}
 
 		public virtual void Update()

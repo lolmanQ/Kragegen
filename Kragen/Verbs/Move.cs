@@ -9,6 +9,8 @@ namespace Kragen.Verbs
 	{
 		Pos2D newPos;
 		Pos2D oldPos;
+
+		bool moveObstruckted;
 		public Move()
 		{
 			name = "Move";
@@ -32,7 +34,7 @@ namespace Kragen.Verbs
 			oldPos = new Pos2D();
 			newPos = new Pos2D();
 			oldPos = Game.Player.position;
-			switch (Input.mod)
+			switch (InputHandler.mod)
 			{
 				case "u":
 				case "up":
@@ -54,12 +56,35 @@ namespace Kragen.Verbs
 					newPos = oldPos;
 					break;
 			}
-			Game.Player.position = newPos;
+			if(CollisionHandler.CheckForObjInWorld(newPos, out Gameobjekt gameobjektHit))
+			{
+				if(gameobjektHit.hasCollision)
+				{
+					moveObstruckted = true;
+				}
+				else
+				{
+					moveObstruckted = false;
+					Game.Player.position = newPos;
+				}
+			}
+			else
+			{
+				moveObstruckted = false;
+				Game.Player.position = newPos;
+			}
 		}
 
 		new void MakeOutText()
 		{
-			verbText = "You moved to: " + newPos.x + ", " + newPos.y;
+			if(moveObstruckted)
+			{
+				verbText = "Something is in the way";
+			}
+			else
+			{
+				verbText = "You moved to: " + newPos.x + ", " + newPos.y;
+			}
 		}
 	}
 }

@@ -31,12 +31,11 @@ namespace Kragen
 			gameObjList = new List<Gameobjekt>();
 			Player = new Player();
 			Player.position = new Pos2D(2, 2);
-			gameObjList.Add(Player);
-			gameObjList.Add(new Wall(new Pos2D(0, 0)));
-			gameObjList.Add(new Wall(new Pos2D(0, 1)));
-			gameObjList.Add(new Wall(new Pos2D(0, 2)));
-			gameObjList.Add(new Wall(new Pos2D(0, 3)));
-			gameObjList.Add(new Wall(new Pos2D(0, 4)));
+			new Wall(new Pos2D(0, 0));
+			new Wall(new Pos2D(0, 1));
+			new Wall(new Pos2D(0, 2));
+			new Wall(new Pos2D(0, 3));
+			new Wall(new Pos2D(0, 4));			
 
 			Player.inventory.AddItem(new Sword(10, 4, "Start sword"));
 			Player.inventory.AddItem(new Helmet(10, 3, "A hat"));
@@ -55,7 +54,7 @@ namespace Kragen
 		{
 			do
 			{
-				Input.NewCycle();
+				InputHandler.NewCycle();
 				CheckInput();
 				if (gameRuning)
 				{
@@ -68,7 +67,7 @@ namespace Kragen
 
 		void CheckInput()
 		{
-			if (Input.verb.ToLower() == "quit") //Check if quit
+			if (InputHandler.verb.ToLower() == "quit") //Check if quit
 			{
 				gameRuning = false;
 				inputRuning = false;
@@ -76,7 +75,7 @@ namespace Kragen
 
 			foreach (Verb item in verbs)
 			{
-				if (Input.verb == item.name.ToLower())
+				if (InputHandler.verb == item.name.ToLower())
 				{
 					currentVerb = item;
 					break;

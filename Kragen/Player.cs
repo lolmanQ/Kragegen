@@ -22,6 +22,8 @@ namespace Kragen
 			isDrawn = true;
 			health = 30;
 			zIndex = 10;
+			hasCollision = true;
+			Game.gameObjList.Add(this as Gameobjekt);
 		}
 
 		public void TakeDamage(float amount, string type)

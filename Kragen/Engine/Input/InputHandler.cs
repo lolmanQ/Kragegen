@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Kragen.Verbs;
+using Kragen.Engine.Input;
 
 namespace Kragen.Engine
 {
-	public class Input
+	public class InputHandler
 	{
 		public static string verb;
 		public static string mod;
@@ -20,7 +21,7 @@ namespace Kragen.Engine
 		public static void NewVerb()
 		{
 			Console.ForegroundColor = ConsoleColor.White;
-			string inputString = Console.ReadLine();
+			string inputString = InputFilter.ReadL();
 			inputString = inputString.ToLower();
 			string[] inputAr = inputString.Split(' ');
 			if (inputAr.Length != 0)
@@ -56,7 +57,7 @@ namespace Kragen.Engine
 
 		public static void NewMod(List<string> listOfAllowed)
 		{
-			mod = Console.ReadLine();
+			mod = InputFilter.ReadL();
 			mod = mod.ToLower();
 			foreach (string item in listOfAllowed)
 			{
