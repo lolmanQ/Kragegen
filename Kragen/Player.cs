@@ -26,6 +26,11 @@ namespace Kragen
 			Game.gameObjList.Add(this as Gameobjekt);
 		}
 
+		public struct Equipt
+		{
+			
+		}
+
 		public void TakeDamage(float amount, string type)
 		{
 

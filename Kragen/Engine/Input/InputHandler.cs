@@ -4,32 +4,31 @@ using System.Linq;
 using System.Threading.Tasks;
 using Kragen.Verbs;
 using Kragen.Engine.Input;
+using Kragen.Utilitys;
 
 namespace Kragen.Engine
 {
 	public class InputHandler
 	{
 		public static string verb;
-		public static string mod;
+		public static List<string> mods = new List<string>();
 		public static void NewCycle()
 		{
-			Console.ForegroundColor = ConsoleColor.Green;
-			Console.WriteLine("make input");
+			Output.InputText("Make input", true);
 			NewVerb();
 		}
 
 		public static void NewVerb()
 		{
-			Console.ForegroundColor = ConsoleColor.White;
 			string inputString = InputFilter.ReadL();
 			inputString = inputString.ToLower();
 			string[] inputAr = inputString.Split(' ');
 			if (inputAr.Length != 0)
 			{
 				verb = inputAr[0];
-				foreach (Verb item in Game.verbs)
+				foreach (Verb item in Game.verbs) // goes through all verbs that are in the list Game.verbs
 				{
-					if (verb == item.name.ToLower())
+					if (verb == item.name.ToLower()) //if player first input is one of the verbs name
 					{
 						if (item.hasMods && inputAr.Length > 1)
 						{
@@ -37,24 +36,31 @@ namespace Kragen.Engine
 							{
 								if (allowed.ToLower() == inputAr[1])
 								{
-									mod = inputAr[1];
-									return;
+									mods.Add(inputAr[1]);
 								}
 							}
+							if(mods.Count > 0)
+							{
+								return;
+							}
 						}
-						else if (!item.hasMods)
+						else if (!item.hasMods || (item.hasMods && item.allowedMods.Count == 0))
 						{
 							return;
+						}
+						if (item.hasMods)
+						{
+							Output.ErrorText("Allowed mods: " + item.allowedMods.ReturnAllString(), true);
 						}
 					}
 				}
 			}
 
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.WriteLine("bad input");
+			Output.ErrorText("Incorrect input", true);
 			NewVerb();
 		}
 
+		/*
 		public static void NewMod(List<string> listOfAllowed)
 		{
 			mod = InputFilter.ReadL();
@@ -66,8 +72,9 @@ namespace Kragen.Engine
 					return;
 				}
 			}
-			Console.WriteLine("input not alowed");
+			Output.ErrorText("input not alowed", true);
 			NewMod(listOfAllowed);
 		}
+		*/
 	}
 }

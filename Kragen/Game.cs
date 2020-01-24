@@ -27,6 +27,18 @@ namespace Kragen
 
 		public void Start()
 		{
+			foreach (Verb item in verbs)
+			{
+				item.Start();
+			}
+
+			Console.Clear();
+			LoadContent();
+			Loop();
+		}
+
+		void LoadContent()
+		{
 			renderer = new Renderer(5, 5);
 			gameObjList = new List<Gameobjekt>();
 			Player = new Player();
@@ -35,14 +47,11 @@ namespace Kragen
 			new Wall(new Pos2D(0, 1));
 			new Wall(new Pos2D(0, 2));
 			new Wall(new Pos2D(0, 3));
-			new Wall(new Pos2D(0, 4));			
+			new Wall(new Pos2D(0, 4));
 
 			Player.inventory.AddItem(new Sword(10, 4, "Start sword"));
 			Player.inventory.AddItem(new Helmet(10, 3, "A hat"));
 			Player.inventory.AddItem(new Sword(100, 1, "God sword"));
-
-			Console.Clear();
-			Loop();
 		}
 
 		void Quiting()
@@ -86,10 +95,13 @@ namespace Kragen
 		void Update()
 		{
 			currentVerb.Use();
-			foreach (Gameobjekt item in gameObjList)
+			if(!currentVerb.skipUpdate)
 			{
-				item.Update();
-			}
+				foreach (Gameobjekt item in gameObjList)
+				{
+					item.Update();
+				}
+			}	
 		}
 
 		void Render()
@@ -106,10 +118,8 @@ namespace Kragen
 
 			}
 			renderer.Draw();
-			Console.ForegroundColor = ConsoleColor.Blue;
-			Console.WriteLine(currentVerb.verbText);
-			Console.ForegroundColor = ConsoleColor.DarkMagenta;
-			Console.WriteLine("-----------------------");
+			Output.VerbText(currentVerb.verbText, !currentVerb.hasLineBreak);
+			Output.SpaceLine("-----------------------", true);
 		}
 	}
 }

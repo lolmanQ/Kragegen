@@ -8,9 +8,17 @@ namespace Kragen.Verbs
 	public class Verb
 	{
 		public string name, verbText;
-		public bool isTextBased, hasMods;
-		public List<string> allowedMods;
+		public bool isTextBased, hasLineBreak = false, skipUpdate = false;
+		public bool hasMods, modsAllowedEmpty;
+		public List<string> allowedMods = new List<string>();
 
+		public virtual void Start()
+		{
+			foreach (Verb item in Game.verbs)
+			{
+				allowedMods.Add(item.name);
+			}
+		}
 		public virtual void Use()
 		{
 			

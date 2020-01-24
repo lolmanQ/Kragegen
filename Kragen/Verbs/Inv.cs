@@ -13,6 +13,7 @@ namespace Kragen.Verbs
 			name = "Inv";
 			isTextBased = true;
 			hasMods = true;
+			hasLineBreak = true;
 			allowedMods = new List<string>(){
 				"weapons", "w",
 				"all", "a"
@@ -27,7 +28,7 @@ namespace Kragen.Verbs
 		new public void MakeOutText()
 		{
 			verbText = "";
-			switch (InputHandler.mod)
+			switch (InputHandler.mods[1])
 			{
 				case "weapons":
 				case "w":
