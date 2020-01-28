@@ -28,7 +28,7 @@ namespace Kragen.Verbs
 		new public void MakeOutText()
 		{
 			verbText = "";
-			switch (InputHandler.mods[1])
+			switch (InputHandler.mods[0])
 			{
 				case "weapons":
 				case "w":

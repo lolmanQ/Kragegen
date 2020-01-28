@@ -14,10 +14,7 @@ namespace Kragen.Verbs
 
 		public virtual void Start()
 		{
-			foreach (Verb item in Game.verbs)
-			{
-				allowedMods.Add(item.name);
-			}
+			
 		}
 		public virtual void Use()
 		{

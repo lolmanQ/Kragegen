@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Kragen.Utilitys;
+using Kragen.Engine;
 
 namespace Kragen.Verbs
 {
@@ -17,6 +18,14 @@ namespace Kragen.Verbs
 			allowedMods = new List<string>();
 		}
 
+		public override void Start()
+		{
+			foreach (Verb item in Game.verbs)
+			{
+				allowedMods.Add(item.name);
+			}
+		}
+
 		public override void Use()
 		{
 			base.Use();
@@ -25,13 +34,18 @@ namespace Kragen.Verbs
 
 		new void MakeOutText()
 		{
-			verbText = "Comands: ";
-			List<string> verbNameList = new List<string>();
-			foreach (Verb item in Game.verbs)
+			verbText = "";
+			if(InputHandler.mods.Count == 0)
 			{
-				verbNameList.Add(item.name);
+				verbText = "Comands: ";
+				List<string> verbNameList = new List<string>();
+				foreach (Verb item in Game.verbs)
+				{
+					verbNameList.Add(item.name);
+				}
+				verbText += verbNameList.ReturnAllString();
+				return;
 			}
-			verbText += verbNameList.ReturnAllString();
 		}
 	}
 }

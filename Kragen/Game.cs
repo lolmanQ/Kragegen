@@ -8,6 +8,7 @@ using Kragen.GameObj;
 using Kragen.InventorySystem;
 using Kragen.InventorySystem.Armors;
 using Kragen.InventorySystem.Weapons;
+using Kragen.Utilitys;
 
 namespace Kragen
 {

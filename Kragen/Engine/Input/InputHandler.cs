@@ -48,6 +48,10 @@ namespace Kragen.Engine
 						{
 							return;
 						}
+						else if(item.modsAllowedEmpty && mods.Count == 0)
+						{
+							return;
+						}
 						if (item.hasMods)
 						{
 							Output.ErrorText("Allowed mods: " + item.allowedMods.ReturnAllString(), true);
