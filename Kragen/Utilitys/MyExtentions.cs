@@ -6,8 +6,8 @@ using Kragen.Verbs;
 
 namespace Kragen.Utilitys
 {
-    public static class MyExtentions
-    {
+	public static class MyExtentions
+	{
 		public static string ReturnAllString<T>(this List<T> list)
 		{
 			if(list.Count == 0)
@@ -51,5 +51,5 @@ namespace Kragen.Utilitys
 			}
 			return outString;
 		}
-    }
+	}
 }

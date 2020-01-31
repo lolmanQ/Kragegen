@@ -7,8 +7,8 @@ using Kragen.Utilitys;
 
 namespace Kragen.Engine.Input
 {
-    public class InputFilter
-    {
+	public class InputFilter
+	{
 		static string outString;
 		private static bool ReadLine()
 		{
@@ -54,6 +54,6 @@ namespace Kragen.Engine.Input
 				}
 			}
 		}
-        
-    }
+		
+	}
 }
