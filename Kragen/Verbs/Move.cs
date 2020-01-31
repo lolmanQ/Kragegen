@@ -34,7 +34,7 @@ namespace Kragen.Verbs
 			oldPos = new Pos2D();
 			newPos = new Pos2D();
 			oldPos = Game.Player.position;
-			switch (InputHandler.mods[1])
+			switch (InputHandler.mods[0])
 			{
 				case "u":
 				case "up":
