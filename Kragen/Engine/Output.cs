@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Kragen.Engine
 {
-    public class Output
-    {
+	public class Output
+	{
 		private static void SendOut(string outputString, bool needsLineBreak)
 		{
 			if (needsLineBreak)
@@ -19,7 +19,7 @@ namespace Kragen.Engine
 			}
 		}
 
-        public static void NormalText(string outputString, bool needsLineBreak)
+		public static void NormalText(string outputString, bool needsLineBreak)
 		{
 			Console.ResetColor();
 			SendOut(outputString, needsLineBreak);
@@ -52,5 +52,5 @@ namespace Kragen.Engine
 			SendOut(outputString, needsLineBreak);
 			Console.ResetColor();
 		}
-    }
+	}
 }

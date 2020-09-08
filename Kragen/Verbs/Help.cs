@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Kragen.Utilitys;
 using Kragen.Engine;
+using System.Runtime.CompilerServices;
 
 namespace Kragen.Verbs
 {
@@ -45,6 +46,16 @@ namespace Kragen.Verbs
 				}
 				verbText += verbNameList.ReturnAllString();
 				return;
+			}
+			else
+			{
+				foreach (Verb item in Game.verbs)
+				{
+					if(item.name == InputHandler.mods[0])
+					{
+
+					}
+				}
 			}
 		}
 	}

@@ -21,6 +21,7 @@ namespace Kragen.Engine
 		public static void NewVerb()
 		{
 			string inputString = InputFilter.ReadL();
+			mods.Clear();
 			inputString = inputString.ToLower();
 			string[] inputAr = inputString.Split(' ');
 			if (inputAr.Length != 0)

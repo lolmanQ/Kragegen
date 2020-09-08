@@ -6,9 +6,9 @@ using Kragen.Utilitys;
 
 namespace Kragen.Engine
 {
-    public class CollisionHandler
-    {
-        public static bool CheckForObjInWorld(Pos2D position, out Gameobjekt gameobjekt)
+	public class CollisionHandler
+	{
+		public static bool CheckForObjInWorld(Pos2D position, out Gameobjekt gameobjekt)
 		{
 			if(GoThroughAllObj(Game.gameObjList, position, out gameobjekt))
 			{
@@ -35,5 +35,5 @@ namespace Kragen.Engine
 			gameobjektHit = null;
 			return false;
 		}
-    }
+	}
 }
